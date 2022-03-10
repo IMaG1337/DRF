@@ -37,8 +37,8 @@ const UserList = ({users}) => {
             <th>
                 Email
             </th>
-            {users.map((user) => <UsersItem m user={user}/>)}
+            {users.map((user) => <UsersItem user={user}/>)}
         </table>
     )
 }
-export default UserList
+export default UserList;
