@@ -5,6 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+    background-color: c;
 }
 
 code {
@@ -13,13 +14,13 @@ code {
 }
 
 body {
-    margin: 0px;
-    font-family: 'segoe ui';
+    margin: 0;
+    font-family: 'segoe ui', serif;
   }
 .menu {
     height: 50px;
     width: 100%;
-    background-color: #1177ca;
+    background-color: #6678b1;
     position: relative;
 }
 
@@ -34,9 +35,12 @@ body {
     font-size: 20px;
     font-weight: 700;
     text-align: right;
-    text-transform: uppercase;
     text-decoration: none;
     padding: 10px 10px;
+    position: relative;
+}
+.menu a:hover{
+    color: black;
 }
 ul.menu {
     display: block;
@@ -45,7 +49,7 @@ ul.menu {
 }
 
 .fa-user{
-  font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif, serif;
   font-size: 14px;
   background: white;
   max-width: 70%;
@@ -56,14 +60,18 @@ ul.menu {
 .fa-user th {
   font-weight: normal;
   color: #039;
-  border-bottom: 2px solid #6678b1;
   padding: 10px 8px;
 }
 .fa-user td {
-  border-bottom: 1px solid #ccc;
+    border: 2px solid #6678b1;
   color: #669;
   padding: 9px 8px;
-  transition: .3s linear;
+  /*-webkit-transition: width 2s, height 1s, background-color 2s, -webkit-transform 1s;*/
+    transition: background-color 0.5s, transform 1s;
+}
+.fa-user td:hover{
+background-color: #7bffc4;
+
 }
 * {
     box-sizing: border-box;
