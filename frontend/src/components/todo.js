@@ -16,6 +16,9 @@ const TodoIteam = ({ todo }) => {
             {todo.editDate}
         </td>
         <td>
+            {todo.active.toString()}
+        </td>
+        <td>
             {todo.project}
         </td>
         <td>
@@ -41,6 +44,9 @@ const TodoList = ({ todos }) => {
                     </td>
                     <td>
                         Edit Date
+                    </td>
+                    <td>
+                        Active
                     </td>
                     <td>
                         Project

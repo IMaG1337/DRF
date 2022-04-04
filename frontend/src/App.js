@@ -34,7 +34,6 @@ class App extends React.Component {
                         'users': users
                     }
                 )
-                console.log(<UserList users={this.state.users} />)
             }).catch(error => console.log(error))
 
         axios.get('http://127.0.0.1:8000/api/project')
@@ -55,6 +54,7 @@ class App extends React.Component {
                         'todo': todo
                     }
                 )
+                console.log(todo[0].active)
             }).catch(error => console.log(error))
 
     }
