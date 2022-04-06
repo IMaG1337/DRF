@@ -54,7 +54,6 @@ class App extends React.Component {
                         'todo': todo
                     }
                 )
-                console.log(todo[0].active)
             }).catch(error => console.log(error))
 
     }
