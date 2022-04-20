@@ -19,8 +19,8 @@ from rest_framework.authtoken import views
 from rest_framework.routers import DefaultRouter
 
 from todo.views import ProjectModelViewSet, TODOModelViewSet
-from users.views import UsersModelViewSet
 from users import urls
+from users.views import UsersModelViewSet
 
 route = DefaultRouter()
 # route.register("users", UsersModelViewSet)
@@ -32,7 +32,6 @@ urlpatterns = [
     path("api-auth/", include("rest_framework.urls")),
     path("api/", include(route.urls)),
     path("api-token-auth/", views.obtain_auth_token),
-
-    path("api/users/v1/", include("users.urls", namespace='v1')),
-    path("api/users/v2/", include("users.urls", namespace='v2')),
+    path("api/users/v1/", include("users.urls", namespace="v1")),
+    path("api/users/v2/", include("users.urls", namespace="v2")),
 ]
