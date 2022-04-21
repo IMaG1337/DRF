@@ -5,5 +5,5 @@ from .views import UsersModelViewSet
 app_name = "users"
 
 urlpatterns = [
-    path("", UsersModelViewSet.as_view({"get": "list"})),
+    path("", UsersModelViewSet.as_view()),
 ]
