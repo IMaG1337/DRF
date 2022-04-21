@@ -5,10 +5,7 @@ from .models import Users
 from .serializers import UsersModelSerializer, UsersV2ModelSerializer
 
 
-class UsersModelViewSet(mixins.ListModelMixin, 
-                        mixins.RetrieveModelMixin, 
-                        mixins.UpdateModelMixin, 
-                        GenericViewSet):
+class UsersModelViewSet(mixins.ListModelMixin, mixins.RetrieveModelMixin, mixins.UpdateModelMixin, GenericViewSet):
 
     queryset = Users.objects.all()
 
