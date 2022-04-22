@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     "users",
     "todo",
     "django_filters",
+    "graphene_django",
 ]
 
 REST_FRAMEWORK = {
@@ -154,3 +155,8 @@ STATIC_URL = "/static/"
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+
+GRAPHENE = {
+    "SCHEMA": "todo_marker.schema.schema"
+}
