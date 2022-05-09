@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const TodoIteam = ({ todo, delete_todo }) => {
     return (
@@ -16,6 +17,7 @@ const TodoIteam = ({ todo, delete_todo }) => {
                 </button>
             </td>
         </tr >
+
     );
 };
 
@@ -36,6 +38,11 @@ const TodoList = ({ todos, delete_todo }) => {
                     <TodoIteam todo={todo} delete_todo={delete_todo} />
                 ))}
             </tbody>
+            <Link to="/todo/create">
+                <button type="button">
+                    Create Todo
+                </button>
+            </Link>
         </table>
     );
 };

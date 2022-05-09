@@ -89,7 +89,6 @@ class App extends React.Component {
         axios
             .post(`http://127.0.0.1:8000/api/project/`, data, { headers, headers })
             .then((response) => {
-                console.log(response.data)
                 let new_project = response.data;
                 this.setState({ projects: [...this.state.projects, new_project] });
             })
@@ -97,8 +96,29 @@ class App extends React.Component {
     }
 
     create_todo(text, active, project, user) {
-        // console.log(user)
+        const headers = this.get_headers();
+        const data = { text: text, active: active, project: project, user_created: user };
+        axios
+            .post(`http://127.0.0.1:8000/api/todo/`, data, { headers, headers })
+            .then((response) => {
+                let new_todo = response.data;
+                this.setState({ todo: [...this.state.todo, new_todo] });
+            })
+            .catch((error) => console.log(error));
     }
+
+    search_project(project_name) {
+        const headers = this.get_headers();
+        axios
+            .get(`http://127.0.0.1:8000/api/project/?name=${project_name}`, { headers, headers })
+            .then((response) => {
+                this.setState({
+                    projects: response.data.results,
+                });
+            })
+            .catch((error) => console.log(error));
+    }
+
     get_token(username, password) {
         axios
             .post("http://127.0.0.1:8000/api-token-auth/", {
@@ -151,6 +171,7 @@ class App extends React.Component {
     render() {
         return (
             <div>
+
                 <BrowserRouter>
                     <MenuList
                         is_auth={this.state.auth}
@@ -164,6 +185,7 @@ class App extends React.Component {
                             element={
                                 <ProjectList
                                     projects={this.state.projects}
+                                    search_project={(project_name) => this.search_project(project_name)}
                                     delete_project={(id) => this.delete_project(id)}
                                 />
                             }

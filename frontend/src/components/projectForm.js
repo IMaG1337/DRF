@@ -3,7 +3,7 @@ import React from "react";
 class ProjectForm extends React.Component {
     constructor(props) {
         super(props);
-        this.state = { name: "", link: "", users: 0 };
+        this.state = { name: "", link: "", users: this.props.users[0].id };
     }
 
     handleChange(event) {

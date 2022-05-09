@@ -3,7 +3,7 @@ import React from "react";
 class TodoForm extends React.Component {
     constructor(props) {
         super(props);
-        this.state = { text: "", active: true, project: null, user: 0 };
+        this.state = { text: "", active: true, project: this.props.projects[0].id, user: this.props.users[0].id };
     }
 
     handleChange(event) {
@@ -13,7 +13,6 @@ class TodoForm extends React.Component {
     }
 
     handleSubmit(event) {
-        console.log(this.user);
         this.props.create_todo(
             this.state.text,
             this.state.active,
@@ -54,7 +53,6 @@ class TodoForm extends React.Component {
                                 name="user"
                                 className="form-control"
                                 onChange={(event) => this.handleChange(event)}
-                                defaultValue={5}
                             >
                                 {this.props.users.map((item) => (
                                     <option value={parseInt(item.id)}>{item.username}</option>
