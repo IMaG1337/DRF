@@ -66,6 +66,8 @@ REST_FRAMEWORK = {
         "rest_framework.authentication.BasicAuthentication",
         "rest_framework.authentication.SessionAuthentication",
     ],
+    "DATE_INPUT_FORMATS": ["%d-%m-%Y"],
+    "DATETIME_FORMAT": "%Y-%m-%d %H:%M",
     "PAGE_SIZE": 100,
 }
 
